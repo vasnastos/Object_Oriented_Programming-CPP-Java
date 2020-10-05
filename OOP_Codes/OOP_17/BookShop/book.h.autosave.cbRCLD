@@ -1,0 +1,18 @@
+#ifndef BOOK_H
+#define BOOK_H
+#include <iostream>
+
+class Book
+{
+private:
+    std::string author;
+    std::string title;
+    double price;
+public:
+    Book(std::string a,std::string t,double pr);
+    std::string get_author()const {return this->author;}
+    std::string get_title()const {return this->title;}
+    double get_price()const {return this->price;}
+};
+
+#endif // BOOK_H
