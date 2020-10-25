@@ -29,7 +29,7 @@ name και balance, καθώς και μεθόδους για deposit (κατά
 tests να περνούν με επιτυχία.</li>
   <ul>
     <li><a href="">Solution</a></li>
-    <li><a href="">Java Solution</a></li>
+    <li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java-/tree/main/EXERCISES/Bank_demo">Java Solution</a></li>
     </ul>
 </ul>
 </body>
