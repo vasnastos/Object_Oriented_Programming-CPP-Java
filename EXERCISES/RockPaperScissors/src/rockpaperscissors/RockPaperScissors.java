@@ -5,6 +5,8 @@
  */
 package rockpaperscissors;
 
+import java.util.Scanner;
+
 /**
  *
  * @author nasto
@@ -15,7 +17,9 @@ public class RockPaperScissors {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MyFrame f=new MyFrame(7);
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Give game number of rounds:");
+        MyFrame f=new MyFrame(sc.nextInt());
     }
     
 }
