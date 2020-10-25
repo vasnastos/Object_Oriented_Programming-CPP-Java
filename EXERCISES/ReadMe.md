@@ -27,6 +27,10 @@ name και balance, καθώς και μεθόδους για deposit (κατά
     </ol>
     3. Χρησιμοποιώντας τη βιβλιοθήκη Catch2, συμπληρώστε τον απαιτούμενο κώδικα έτσι ώστε έτσι ώστε όλα τα
 tests να περνούν με επιτυχία.</li>
+  <ul>
+    <li><a href="">Solution</a></li>
+    <li><a href="">Java Solution</a></li>
+    </ul>
 </ul>
 </body>
 </html>
