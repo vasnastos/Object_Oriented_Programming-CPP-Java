@@ -52,6 +52,11 @@ tests να περνούν με επιτυχία.</li>
 Β) Ελέγξτε όλες τις λειτουργίες της κλάσης με unit tests της βιβλιοθήκης catch2 και με τη χρήση της κλάσης std::complex που ορίζεται στο αρχείο επικεφαλίδας complex. Δείτε το <a href="https://en.cppreference.com/w/cpp/numeric/complex" target="_blank">Complex</a> και το <a href="https://github.com/catchorg/Catch2" target="_blank">Catch</a>.
 <br>
 Γ) Δημιουργήστε ένα GUI (Graphical User Interface) χρησιμοποιώντας το framework wxWidgets https://www.wxwidgets.org/. To GUI να δίνει τη δυνατότητα στο χρήστη να συμπληρώσει τα στοιχεία 2 μιγαδικών αριθμών και να επιτρέπει τη διενέργεια των πράξεων πρόσθεση, αφαίρεση, πολλαπλασιασμός και διαίρεση, πατώντας πλήκτρα σε μια γραφική διεπαφή.</li>
+  <ol>
+     <li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/raw/main/complexproject.zip">Λύση με Γραφικό πελιβάλλον υλοποιημένο με java</a></li>
+  <li><a href="">Λύση Με χρήση c++ και unit tests</a></li>
+  <li><a href="">Λύση με c++ και γραφικό περιβέλλον</a></li>
+  </ol>
   </ul>
 </body>
 </html>
