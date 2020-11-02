@@ -18,6 +18,6 @@
 <hr>
 <br>
 <h3>Βίντεο για εγκατάσταση των wxwidgets στο visual studio 2019</h3>
-<iframe src="https://youtu.be/sRhoZcNpMb4" title="Installing wxwidgets in VS2019" width="100%" height="280" style="border:2px solid;"></iframe>
+<iframe src="https://www.youtube.com/watch?v=sRhoZcNpMb4" title="Installing wxwidgets in VS2019" width="100%" height="280" style="border:2px solid;"></iframe>
 </hmtl>
 </body>
