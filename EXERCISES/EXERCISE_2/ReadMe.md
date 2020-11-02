@@ -19,6 +19,6 @@
 <hr>
 <br>
 <h3>Βίντεο για εγκατάσταση των wxwidgets στο visual studio 2019</h3>
-<iframe src="https://www.youtube.com/watch?v=sRhoZcNpMb4" title="Installing wxwidgets in VS2019" width="100%" height="280" style="border:2px solid;"></iframe>
+[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 </hmtl>
 </body>
