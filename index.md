@@ -23,11 +23,9 @@
  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/charset.png?raw=true" height="460"></img>
 <li>Τέλος ανοίγω το drop_down μενού από την επιλογή linker επιλέγω το system και αλλάζω το subsystem σε Windows (/SUBSYSTEM:WINDOWS)<li>
   <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(138).png?raw=true" width="1024" height="460">
-</ul>
+
 <hr>
 <br>
 <h3>Βίντεο για εγκατάσταση των wxwidgets στο visual studio 2019:<a href=""https://www.youtube.com/watch?v=sRhoZcNpMb4"">VIDEO</a></h3>
-</hmtl>
-</body>
 
 
