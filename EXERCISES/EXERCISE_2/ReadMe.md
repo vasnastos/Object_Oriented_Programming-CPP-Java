@@ -19,6 +19,6 @@
 <hr>
 <br>
 <h3>Βίντεο για εγκατάσταση των wxwidgets στο visual studio 2019</h3>
-[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 </hmtl>
 </body>
