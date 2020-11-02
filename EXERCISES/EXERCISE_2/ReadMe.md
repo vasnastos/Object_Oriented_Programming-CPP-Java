@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <body>
 <img src="" width="1024" height="460"></img>
