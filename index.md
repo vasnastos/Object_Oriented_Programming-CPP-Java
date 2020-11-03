@@ -12,7 +12,7 @@
 <li>Επιλέγω από το solution explorer το custom_build και πραγματοποιώ build του solution πατώντας τα κουμπία ctrl+shift+B</li>
   <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(127).png?raw=true" width="1024" height="40%">
 <li>Μόλις ολοκληρωθεί η παραπάνω διαδικασία ,από το μενού view και από το υπομενού other window διαλέγω την επιλογή property manager</li>
-   <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(136).png?raw=true" width="1024" height="460"></img>
+   <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(136).png?raw=true" width="1024" height="30%">
 <li>Επιλέγω το custom_build και κάνοντας δεξί κλικ πάνω σε αυτό διαλέγω από την λίστα την επιλογή Add Existing property sheet<li>
    <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(130).png?raw=true">
 <li>Από το παράθυρο διαλόγου της εξερεύνησης αρχείων των windows επιλέγω από τον φάκελο wxwidgets-3.1.4(Φάκελος που έχω αποθηκεύσει το zip αρχεί της εγκατάστασης) το αρχειο wxwidgets.props και στην συνέχεια πατάω το κουμπί άνοιγμα</li>
