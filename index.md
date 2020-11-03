@@ -26,6 +26,8 @@
 
 <hr>
 <br>
+<h3 style="text-align:center">ΒΙΝΤΕΟ ΜΕ ΟΔΗΓΙΕΣ ΕΓΚΑΤΑΣΤΑΣΕΙΣ</h3>
+<br>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sRhoZcNpMb4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
