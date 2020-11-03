@@ -32,6 +32,7 @@
 <br>
 <h3 style="text-align:center">ΒΙΝΤΕΟ ΜΕ ΟΔΗΓΙΕΣ ΕΓΚΑΤΑΣΤΑΣHΣ</h3>
 <br>
+<center>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sRhoZcNpMb4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</center>
 
