@@ -18,7 +18,7 @@
 <li>Από το παράθυρο διαλόγου της εξερεύνησης αρχείων των windows επιλέγω από τον φάκελο wxwidgets-3.1.4(Φάκελος που έχω αποθηκεύσει το zip αρχεί της εγκατάστασης) το αρχειο wxwidgets.props και στην συνέχεια πατάω το κουμπί άνοιγμα</li>
  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(136).png?raw=true" height="460">
 <li>Στην συνέχεια δημιουργώ ένα project και στο solution explorer επιλέγω το project file και πάτάω των συνδυασμό πλήκτρο alt+Enter και εμφανίζεται παράθυρο διαλόγου με τις παρακάτω επιλογές</li>
- <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/dial.png?raw=true" width="55%" height="460">
+ <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/dial.png?raw=true" width="55%" height="30%">
 <li>Από τις διαθέσιμες επιλογές κάνω κλικ στην επιλογή advanced και αλλάζω το character set σε use unicode character set</li>
  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/charset.png?raw=true" height="40%">
 <li>Τέλος ανοίγω το drop_down μενού από την επιλογή linker επιλέγω το system και αλλάζω το subsystem σε Windows (/SUBSYSTEM:WINDOWS)</li>
@@ -26,7 +26,7 @@
 
 <hr>
 <br>
-<h3 style="text-align:center">ΒΙΝΤΕΟ ΜΕ ΟΔΗΓΙΕΣ ΕΓΚΑΤΑΣΤΑΣΕΙΣ</h3>
+<h3 style="text-align:center">ΒΙΝΤΕΟ ΜΕ ΟΔΗΓΙΕΣ ΕΓΚΑΤΑΣΤΑΣHΣ</h3>
 <br>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sRhoZcNpMb4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
