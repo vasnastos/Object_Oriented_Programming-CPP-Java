@@ -8,9 +8,9 @@
 <li>Download WXWIDGETS:<a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.zip">DOWNLOAD</a>
 <li>Αντιγραφή της διαδρομής του φακέλου wxWidgets 3.1.4 και δημιουργία μίας νέας μεταβλητής περιβάλλοντος του συστήματος με την χρήση της διαδρομής</li>
 <li>Στον φάκελο .../wxWidgets 3.1.4/build/msw διπλό κλικ στο αρχείο wx_vc16.sln</li>
-  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(135).png?raw=true" width="1024" height="460">
+  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(135).png?raw=true" width="1024" height="40%">
 <li>Επιλέγω από το solution explorer το custom_build και πραγματοποιώ build του solution πατώντας τα κουμπία ctrl+shift+B</li>
-  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(127).png?raw=true" width="1024" height="460">
+  <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(127).png?raw=true" width="1024" height="40%">
 <li>Μόλις ολοκληρωθεί η παραπάνω διαδικασία ,από το μενού view και από το υπομενού other window διαλέγω την επιλογή property manager</li>
    <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/%CE%A3%CF%84%CE%B9%CE%B3%CE%BC%CE%B9%CF%8C%CF%84%CF%85%CF%80%CE%BF%20%CE%BF%CE%B8%CF%8C%CE%BD%CE%B7%CF%82%20(136).png?raw=true" width="1024" height="460"></img>
 <li>Επιλέγω το custom_build και κάνοντας δεξί κλικ πάνω σε αυτό διαλέγω από την λίστα την επιλογή Add Existing property sheet<li>
