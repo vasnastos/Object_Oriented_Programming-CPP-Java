@@ -1,0 +1,4 @@
+Africa,349,1,Toto,156,Toto_Africa.wav
+November_Rain,421,1,Guns and Roses,12,November_Rain.wav
+Extreme_Ways,321,0,Moby,Extreme_Ways.wav,76
+My-Sunset,678,0,Feint,My_Sunset.wav,87
