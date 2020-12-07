@@ -8,6 +8,7 @@
 <li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/blob/main/EXERCISES/RPS.cpp">Solution</a></li>
 <li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/tree/main/EXERCISES/RockPaperScissors">Java Solution</a></li>
 </ol>
+  <hr>
   <li>1.Να ορίζεται η κλάση account (λογαριασμός τράπεζας). Η κλάση account θα πρέπει να περιέχει τα ιδιωτικά
 πεδία name (όνομα πελάτη) και balance (υπόλοιπο λογαριασμού), δύο constructors, getters για τα πεδία
 name και balance, καθώς και μεθόδους για deposit (κατάθεση) ενός ποσού στον λογαριασμό και withdraw
@@ -32,6 +33,7 @@ tests να περνούν με επιτυχία.</li>
     <li><a href="">Solution</a></li>
     <li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java-/tree/main/EXERCISES/Bank_demo">Java Solution</a></li>
     </ul>
+  <hr>
   <li>Α) Γράψτε ένα πρόγραμμα που να υλοποιεί την κλάση μιγαδικός αριθμός (Complex) και να παρέχει την ακόλουθη λειτουργικότητα.
 <ul>
 <li>Επιστροφή συζυγούς (conjugate) μιγαδικού (συνάρτηση μέλος conj)</li>
@@ -57,6 +59,7 @@ tests να περνούν με επιτυχία.</li>
   <li><a href="">Λύση Με χρήση c++ και unit tests</a></li>
   <li><a href="">Λύση με c++ και γραφικό περιβέλλον</a></li>
   </ol>
+  <hr>
   <li>Γράψτε ένα πρόγραμμα που να εμπεριέχει μια κλάση Lexicon που να διαβάζει τα περιεχόμενα ενός αρχείου με λέξεις της αγγλικής γλώσσας (το αρχείο θα περιέχει μια λέξη ανά σειρά). Το πρόγραμμα να προσφέρει μέσω ενός μενού επιλογών τις ακόλουθες λειτουργίες: 
 1. Nα εμφανίζει το πλήθος και εφόσον ο χρήστης επιθυμεί όλες τις λέξεις που έχουν το πλήθος γραμμάτων που θα δίνει ο χρήστης.
 2. Nα εμφανίζει το πλήθος και εφόσον ο χρήστης επιθυμεί όλες τις λέξεις που ξεκινούν με μια ακολουθία γραμμάτων που θα δίνει ο χρήστης.
