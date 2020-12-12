@@ -1,0 +1,33 @@
+#include "mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+    this->setFixedSize(400,400);
+    this->setWindowTitle("Cargos Project");
+    mw=new QWidget;
+    mw->setFixedSize(width(),height());
+    this->setCentralWidget(mw);
+    ml=new QVBoxLayout;
+    mw->setLayout(ml);
+    QLabel *gif=new QLabel;
+    QMovie *m=new QMovie;
+    m->setFileName(":/cargo.gif");
+    gif->setFixedSize(0.98*this->width(),0.3*this->height());
+    QSize ms(gif->width(),gif->height());
+    m->setScaledSize(ms);
+    gif->setMovie(m);
+    gif->movie()->start();
+    QPushButton *b=new QPushButton("ADD CARGO");
+    b->setStyleSheet("border:2px solid;"
+                     "border-color:#948250;"
+                     "background-color:#a2a9b0;"
+                     "color:#590d2e;");
+    b->setFixedWidth(0.2*this->width());
+    QPushButton *b2=new QPush
+}
+
+MainWindow::~MainWindow()
+{
+}
+

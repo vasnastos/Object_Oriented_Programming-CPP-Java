@@ -1,0 +1,6 @@
+1,Patras,1000,false,76.8
+2,Athens,200,true,123.89
+3,Kalamata,2000,false,213.89
+4,Patras,1500,true,67.23
+5,Athens,1100,false,126.32
+6,Igoumenitsa,1600,true,431.21

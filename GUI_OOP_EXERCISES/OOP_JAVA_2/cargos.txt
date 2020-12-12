@@ -1,5 +1,0 @@
-1,Patras,1000,1
-2,Athens,200,0
-3,Kalamata,2000,1
-4,Patras,1500,0
-5,Athens,1100,1
