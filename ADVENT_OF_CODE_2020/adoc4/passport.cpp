@@ -1,25 +1,49 @@
 #include "passport.hpp"
-passport()
+passport::passport()
 {
-    for(int i=0;i<sizeof(codes)/sizeof(codes[0]);i++)
-    {
-        checksums.insert(std::make_pair(codes[i],"-"));
-    }
 }
 
-void passport::adddata(std::string id,std::string value)
+void passport::add_data(std::string id, std::string value)
 {
-   this->checksums[id]=value;
+    bool triggered=false;
+    for(int i=0;i<8;i++)
+    {
+        if(id==codes[i]) 
+        {
+            triggered=true;
+           break;
+        }
+    }
+    if(!triggered) return;
+    if(value.empty())
+    {
+        value="-";
+    }
+    this->checksums[id] = value;
 }
 
 bool passport::validance()
 {
-    for(std::map <std::string,std::string>::iterator i=this->checksum.begin();i!=this->checksum.end();i++)
+    if (this->checksums.size()<7)
     {
-       if(i->first=='-')
-       {
-           return false;
-       }
-       if(i->second=="-" && i->first)
+        return false;
     }
+    if(this->checksums.find("cid")!=this->checksums.end() && this->checksums.size()==7)
+    {
+        return false;
+    }
+    for(auto &y:this->checksums)
+    {
+        if(y.second=="-"  && y.first!="cid") return false;
+    }
+    return true;
+}
+
+std::ostream &operator<<(std::ostream &os, const passport &p)
+{
+    for (auto &x : p.checksums)
+    {
+        os << "Record[" << x.first << "]:" << x.second << std::endl;
+    }
+    return os;
 }
