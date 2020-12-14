@@ -7,7 +7,7 @@
 <li>Για ένα διάνυσμα ακεραίων.</li>
 <li>Για μια Λίστα με αντικείμενα student (σπουδαστής)[name,grade].</li>
 </ol>
-  <b>ΛΥΣΗ ΑΣΚΗΣΗΣ:</b><a href="">SOLUTION</a>
+  <b>ΛΥΣΗ ΑΣΚΗΣΗΣ:</b><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/tree/main/JAVA/EXAMPLE_1">SOLUTION</a>
   <br>
   <br>
 <li>Να κατασκευάσετε κλάση με όνομα vehicle (όχημα) και τις υποκλάσεις αυτής car (αυτοκίνητο) και truck (φορτηγό).
@@ -42,10 +42,19 @@ truck</li>
       <li>Να πραγματοποιεί έξοδο από το πρόγραμμα</li>
       </ul>
     </ol>
-  <b>Λύση Ασκησης:</b><a href="">SOLUTION</a>
+  <b>Λύση Ασκησης:</b><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/tree/main/JAVA/EXAMPLE_2">SOLUTION</a>
   </ul>
   <br>
-<li></li>
+<li>Να κατασκευαστεί συνάρτηση η οποία θα δέχεται σαν όρισμα ένα vector και ένα key value και να επιστρέφει σε ποσες φορές βρέθηκε το vector το key value.Να εκτελεστεί η συνάρτηση για:
+<ul>
+<li>Ένα διάνυσμα ακεραίων</li>
+<li>Ένα διανυσμα double τιμών</li>
+<li>Ένα διάνυσμα με αντικείμενα τυπου point</li>
+</ul>
+</li>
+<b>Λύση Ασκησης:</b><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/tree/main/JAVA/EXAMPLE_3">SOLUTION</a>
+<br>
+<br>
 <li></li>
 <li></li>
 </ul>
