@@ -55,7 +55,15 @@ truck</li>
 <b>Λύση Ασκησης:</b><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/tree/main/JAVA/EXAMPLE_3">SOLUTION</a>
 <br>
 <br>
-<li></li>
+<li>Να κατασκευαστεί ένα inteface number το οποίο θα δηλώνει τις λειτουργίες:
+  <ol>
+    <li>add(T x):Προσθήκη Αριθμού</li>
+    <li>max_element:<b>Επιστροφή Μεγαλύτερου αριθμού</b></li>
+    <li>min_element:<b>Επιστροφή μικρότερου Αριθμού</b></li>
+    <li>Average:Μέσος όρος<b></b></li>
+    </ol>
+  Οι παραπάνω λειτουργίες να υλοποιηθούν για 2 κλάσεις οι οποίες θα έχουν σαν ιδιωτικά μέλη λίστες με ακέραιες και δεκαδικές τιμες.Το πρόγραμμα θα πρέπει να παρέχει την δυνατότητα εμφάνισης τον αριθμών σε παράθυρο μυνήματος.Για τον παραπάνω σκοπό να χρησιμοποιηθεί η συνάρτηση JOptionPane.showMessageDialog().
+  </li>
 <li></li>
 </ul>
 </body>
