@@ -65,7 +65,7 @@ truck</li>
   Οι παραπάνω λειτουργίες να υλοποιηθούν για 2 κλάσεις οι οποίες θα έχουν σαν ιδιωτικά μέλη λίστες με ακέραιες και δεκαδικές τιμες.Το πρόγραμμα θα πρέπει να παρέχει την δυνατότητα εμφάνισης τον αριθμών σε παράθυρο μυνήματος.Για τον παραπάνω σκοπό να χρησιμοποιηθεί η συνάρτηση JOptionPane.showMessageDialog().
   </li>
   
-<b>Λύση Ασκησης:</b><a href="">SOLUTION</a>
+<b>Λύση Ασκησης:</b><a href="https://raw.githubusercontent.com/vasnastos/Object_Oriented_Programming-CPP-Java/main/JAVA/Example_4/example4.java">SOLUTION</a>
 <br>
 <br>
 <li></li>
