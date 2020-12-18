@@ -68,7 +68,7 @@ truck</li>
 <b>Λύση Ασκησης:</b><a href="https://raw.githubusercontent.com/vasnastos/Object_Oriented_Programming-CPP-Java/main/JAVA/Example_4/example4.java">SOLUTION</a>
 <br>
 <br>
-<li>Bank DemoQ<a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/blob/main/JAVA/Example_5/src/example5.java">Code</a></li>
+<li>Bank Demo:<a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/blob/main/JAVA/Example_5/src/example5.java">Code</a></li>
 </ul>
 </body>
 </html>
