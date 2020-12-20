@@ -3,6 +3,7 @@
 #include <ctime>
 #include <ostream>
 #include <random>
+#include <string>
 #include <cmath>
 #include <iterator>
 #include <numeric>
@@ -23,7 +24,7 @@ void fill_array(std::vector <int> &v)
         v.push_back(dist(mt));
     }
     std::chrono::high_resolution_clock::time_point t2=std::chrono::high_resolution_clock::now();
-    std::chrono::duration <double> dur=std::chrono::duration_cast<std::chrono::duration <double>>(t2-t1)<<std::endl;
+    std::chrono::duration <double> dur=std::chrono::duration_cast<std::chrono::duration <double>>(t2-t1);
     std::cout<<"Data loaded after "<<dur.count()<<" ms"<<std::endl;
     globalcounter++;
 }
