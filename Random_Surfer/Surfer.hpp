@@ -1,6 +1,11 @@
 #include "Matrix.hpp"
 class Surfer:public matrix
 {
-      public:
-        surfer(int rows,int columns,int visitors,int iteration)
-}
+    private:
+      int go_to(int r);
+    public:
+        Surfer(int rows,int columns);
+        ~Surfer();
+        void random_surfer();
+        void Page_rank();
+};

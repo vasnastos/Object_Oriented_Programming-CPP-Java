@@ -19,7 +19,7 @@ void matrix::add_visit(int r)
     this->visits[r]++;
 }
 
-matrix::~matrix() {delete this->p; this->p=0;}
+matrix::~matrix() {delete []this->p; this->p=0; delete []this->visits; this->visits=0;}
 
 int matrix::getrows()const { return this->rows; }
 
@@ -97,7 +97,6 @@ std::vector <int> matrix::nonNeibourghs(int row)const
 
 std::ostream &operator<<(std::ostream &os, const matrix &m)
 {
-    os << "------------------------------------------------" << std::endl;
     for (int i = 0; i < m.rows; i++)
     {
         for (int j = 0; j < m.columns; j++)
