@@ -41,7 +41,7 @@
 <ul>
 <h2>ΠΕΡΙΕΧΟΜΕΝΑ ΜΑΘΗΜΑΤΟΣ</h2>
 <li><h3><a href="javainstallation.html">Οδηγίες Εγκατάστασης JDK και ECLIPSE IDE</a></h3></li>
-<li><h3><a href="">ΥΛΟΠΟΙΗΣΗ ΑΛΓΟΡΙΘΜΟΥ RANDOM SURFER</h3></li>
+<li><h3><a href="randomsurfer.html">Υλοποίηση αλγορίθμου Page Ranking</h3></li>
 </ul>
  
 
