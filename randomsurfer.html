@@ -169,6 +169,47 @@ iframe
   background-color:black;
   color:white;
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:#265e3c;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 </style>
 </head>
@@ -182,7 +223,14 @@ iframe
 	<li><a href="https://vasnastos.github.io/Algorithms_and_complexity/">ΧΡΟΝΟΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ</a></li>
 	<li><a class="proj" href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/raw/main/Random_Surfer_Codes/Random_Surfer_java.zip"><u></u>Demo Σε Java</u></a></li>
 	<li><a href="https://github.com/vasnastos/Object_Oriented_Programming-CPP-Java/blob/main/Random_Surfer_Codes/finalVisualization.png?raw=true">ABOUT</a></li>
- </ul>
+        <li class="dropdown"><button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a></li>
+	</ul>
 <div class="row">
 <div class="desdiv">
 <b>©NASTOS VASILEIOS 2020 ARTA<br>
