@@ -16,8 +16,8 @@ Surfer::~Surfer() {}
 
 void Surfer::Random_Surfing(int visitors, int iters)
 {
-    Surfer::info="<html><body style=\"background-color:cyan;\"><center><h3>Random Surfing Information</h3><hr><table border=\"3\" style=\"color:red; text-align:center; font-weight:bold; font-family:calibri; background-color:light-gray; font-size:18px; width:60%\">";
-    Surfer::info+="<tr><th>VISTOR</th><th>FROM</th><th>TO</th></tr>";
+    Surfer::info="<html><body style=\"background-color:cyan;\"><center><h3>Random Surfing Information</h3><hr><table border=\"3\" style=\"color:#82071b; text-align:center; font-weight:bold; font-family:calibri; background-color:#dbdb7d; font-size:18px; width:60%\">";
+    Surfer::info+="<tr style=\"background-color:#70b58b; color:#060529;\"><th>VISTOR</th><th>FROM</th><th>TO</th></tr>";
     srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     //Θα υπολογιστούν τα αποτελέσματα του αλγόριθμου random Surfing
     int *startingpoints = new int[visitors]; //ο πίνακας θα έχει όσες θέσεις όσες είναι και οι visitors.
