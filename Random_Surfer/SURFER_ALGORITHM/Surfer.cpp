@@ -51,10 +51,10 @@ void Surfer::Random_Surfing(int visitors, int iters)
                 //τότε επιλέγεται τυχαία μία από τις διαθέσιμες κορυφές(συνδεδεμένες σελίδες).
                 if (n.empty())
                 {
-                    nextpage= ran(eng);
+                    nextpage= v(eng);
                     while (nextpage == startingpoints[j])
                     {
-                        nextpage = ran(eng);
+                        nextpage = v(eng);
                     }
                 }
                 nextpage=n.at(rand()%n.size());

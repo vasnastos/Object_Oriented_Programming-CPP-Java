@@ -4,6 +4,11 @@
 //Γεννήτρια παραγωγής τυχαίων αριθμών
 std::mt19937 mt(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
+bool matrix::all_visited()
+{
+    return std::count_if(this->visits,this->visits+this->rows,[](int a) {return a!=0;})==this->rows;
+}
+
 matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols)
 {
     //Γέμισμα πίνακα με τυχαίες τιμές
@@ -78,6 +83,20 @@ int* matrix::get(int r)
     return this->p[r];
 }
 
+void matrix::find_rank()
+{
+    //Εύρεση βαθμών κορυφής.
+    while(!this->rank.empty())
+    {
+        this->rank.pop();
+    }
+     for(int i=0;i<this->rows;i++)
+    {
+        //Εύρεση για κάθε κορυφή του βαθμού της και εισαγωγή στην ουρά.
+         this->rank.push(pagerank{i,(double)this->visits[i]/std::pow(this->rows,2)});
+    }
+}
+
 void matrix::print_ranking()
 {
     //Το ranking για την κάθε σελίδα θα αποτελεί μία μεταβλητή τύπου pagerank
@@ -85,11 +104,6 @@ void matrix::print_ranking()
     //Η ουρα προτεραιότητας έχει το χαρακτηριστικό ότι κάτα την διάρκεια κάθε εισόδου 
     //πραγματοποιήται ταξινόμιση των στοιχείων.
     //Ουρά-->FIFO-->First in First out
-    for(int i=0;i<this->rows;i++)
-    {
-        //Εύρεση για κάθε κορυφή του βαθμού της και εισαγωγή στην ουρά.
-         this->rank.push(pagerank{i,(double)this->visits[i]/std::pow(this->rows,2)});
-    }
     std::cout<<std::endl<<"------------------------------------------------------"<<std::endl;
     std::cout<<"\tVERTEX\tRANK"<<std::endl;
     std::cout.precision(4);

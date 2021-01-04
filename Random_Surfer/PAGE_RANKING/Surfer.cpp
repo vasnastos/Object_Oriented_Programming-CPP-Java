@@ -2,9 +2,26 @@
 #include <string>
 #include <fstream>
 #define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
+#define TERMINATE 0.05
 
 std::mt19937 eng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 std::uniform_real_distribution<double> ran(0, 1);
+
+bool Surfer::difference()
+{
+    if(this->rank.empty()) {return false;}
+    std::vector <pagerank> it;
+    while(!this->rank.empty())
+    {
+        it.push_back(this->rank.top());
+        this->rank.pop();
+    }
+    for(auto &x:it)
+    {
+        this->rank.push(x);
+    }
+    return it.at(0).rank-it.at(it.size()-1).rank<=TERMINATE && this->all_visited();
+}
 
 Surfer::Surfer(int a) : matrix(a) {}
 
@@ -12,7 +29,7 @@ Surfer::~Surfer() {}
 
 //Surfer::info-->Κατασκευή στατικής μεταβλητής για ανάπτυξη στατικού html κώδικα.
 
-void Surfer::Random_Surfing(int visitors, int iters)
+void Surfer::Random_Surfing(int visitors)
 {
     srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     //Θα υπολογιστούν τα αποτελέσματα του αλγόριθμου random Surfing
@@ -30,7 +47,7 @@ void Surfer::Random_Surfing(int visitors, int iters)
     int nextpage;
     std::cout << "\t\tRandom Surfing" << std::endl;
     std::cout << "*****************************************************************" << std::endl;
-    for (int i = 0; i < iters; i++)
+    while(!this->difference())
     {
         //Θα εκτελεστούν επαναλήψης με βάση το όρισμα iters που θα δεχθεί η συνάρτηση.
         for (int j = 0; j < visitors; j++)
@@ -63,14 +80,17 @@ void Surfer::Random_Surfing(int visitors, int iters)
                     }
                 }
                 nextpage=n.at(rand()%n.size());
+                this->find_rank();
             }
             this->add_visits(nextpage);
             //Για κάθε επισκέπτη βρίσκει την επόμενη σελίδα που θα μεταβεί
             //και την θέτει σαν επόμενη αρχική σελίδα για περιηγηθεί ο αλγόριθμος.
             std::cout << "Visitor " << j + 1 << " goes from Web Page " << startingpoints[j] << " to Web Page " << nextpage << std::endl;
             startingpoints[j] = nextpage;
+            this->find_rank();
         }
         std::cout << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
     }
     delete[] startingpoints;
 }
