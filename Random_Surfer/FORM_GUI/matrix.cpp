@@ -1,4 +1,5 @@
 #include "matrix.hpp"
+#include <numeric>
 #include <cmath>
 
 //Γεννήτρια παραγωγής τυχαίων αριθμών
@@ -91,10 +92,12 @@ void matrix::find_rank()
     {
         this->rank.pop();
     }
+    //Εύρεση συνολικών επισκέψεων
+    const int sum=std::accumulate(this->visits,this->visits+this->rows,0);
      for(int i=0;i<this->rows;i++)
     {
         //Εύρεση για κάθε κορυφή του βαθμού της και εισαγωγή στην ουρά.
-         this->rank.push(pagerank{i,(double)this->visits[i]/std::pow(this->rows,2)});
+        this->rank.push(pagerank{i,(double)this->visits[i]/sum}); 
     }
 }
 

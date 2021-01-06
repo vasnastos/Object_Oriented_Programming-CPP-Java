@@ -1,4 +1,5 @@
 #include "matrix.hpp"
+#include <numeric>
 
 matrix::matrix(int r, int c) : rows(r), columns(c)
 {
@@ -40,11 +41,10 @@ std::vector <int> matrix::getNeibourghs(int row)const
 
 void matrix::find_rank()
 {
-   const int size=this->rows*this->columns;
+   const int sum=std::accumulate(this->visits,this->visits+this->rows,0);
    for(int i=0;i<this->rows;i++)
    {
-       grank g{i,(double)this->visits[i]/size};
-       this->rank.push(g);
+       this->rank.push(grank{i,(double)this->visits[i]/sum});
    }
 }
 
