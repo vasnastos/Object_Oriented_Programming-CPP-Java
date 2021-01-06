@@ -12,7 +12,7 @@ class window:public wxFrame
 {
     private:
        wxBoxSizer *bx;
-       wxTextCtrl *visitors,*pages,*iters;
+       wxTextCtrl *visitors,*pages;
        void panel1()
        {
            wxPanel *panel=new wxPanel(this,wxID_ANY);
@@ -27,19 +27,6 @@ class window:public wxFrame
            this->bx->Add(panel);
        }
        void panel2()
-       {
-           wxPanel *panel=new wxPanel(this,wxID_ANY);
-           wxGridSizer *siz=new wxGridSizer(0,2,5,5);
-           wxStaticText *st=new wxStaticText(panel,wxID_ANY,"ITERATIONS",wxDefaultPosition,wxSize(100,20));
-           st->SetForegroundColour(wxColor("#54394a"));
-           st->SetBackgroundColour(wxColor("#abe6a5"));
-           this->iters=new wxTextCtrl(panel,wxID_ANY,"",wxDefaultPosition,wxSize(100,20));
-           siz->Add(st);
-           siz->Add(this->iters);
-           panel->SetSizer(siz);
-           this->bx->Add(panel);
-       }
-       void panel3()
        {
            wxPanel *panel=new wxPanel(this,wxID_ANY);
            wxGridSizer *siz=new wxGridSizer(0,2,5,5);
@@ -76,7 +63,6 @@ class window:public wxFrame
            this->bx->Add(st);
            this->panel1();
            this->panel2();
-           this->panel3();
            this->buttonpanel();
            this->SetSizer(this->bx);
        }
@@ -85,29 +71,26 @@ class window:public wxFrame
            //Γεγονός που θα εκτελείται όταν πατήται το κουμπί.
            //Εκχωρώ την τιμή από το πεδίο εισόδου σε ένα αλφαριθμητικό.
           std::string vis=std::string(this->visitors->GetValue());
-          std::string its=std::string(this->iters->GetValue());
           std::string pgs=std::string(this->pages->GetValue());
-          if(vis.empty() || its.empty() || pgs.empty())
+          if(vis.empty() || pgs.empty())
           {
               wxMessageBox("Fill all the blanks");
               return;
           }
           int visitor=std::stoi(vis);
-          int iteration=std::stoi(its);
           int page=std::stoi(pgs);
-          if(visitor==0 || iteration==0 || page==0)
+          if(visitor==0  || page==0)
           {
               wxMessageBox("0 number detected!!Surfer algorithm not executed");
               return;
           }
           Surfer s(page);
-          s.Random_Surfing(visitor,iteration);
+          s.Random_Surfing(visitor);
        }
        void clear(wxCommandEvent &ev)
        {
           this->visitors->SetValue("");
           this->pages->SetValue("");
-          this->iters->SetValue("");
        }
 };
 
