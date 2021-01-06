@@ -80,12 +80,17 @@ public class Matrix{
     }
     public void rank()
     {
+		int sum=0;
+		for(int i=0;i<this.rc;i++)
+		{
+			sum+=this.visits;
+		}
     	List <grank> ranks=new ArrayList<grank>();
     	for(int i=0;i<this.rc;i++)
     	{
     		grank g=new grank();
     		g.vertex=i;
-    		g.rank=this.visits[i]/Math.pow(this.rc,2.0);
+    		g.rank=this.visits[i]/sum;
     		ranks.add(g);
     	}
     	Collections.sort(ranks);
