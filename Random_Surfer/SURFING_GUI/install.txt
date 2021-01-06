@@ -1,5 +1,0 @@
-ΟΔΗΓΙΕΣ ΜΕΤΑΓΛΩΤΤΙΣΗΣ
-ΜΕΤΑΓΛΩΤΤΙΣΗ:>g++ surf.cpp Matrix.cpp gui.cpp -IC:\\wxWidgets-3.1.4\\include -IC:\\wxWidgets-3.1.4\\lib\\gcc_dll\\mswu -LC:\\wxWidgets-3.1.4\\lib\\gcc_dll -lwxmsw31u_core -lwxbase31u -o runnable
-ΕΚΤΕΛΕΣΗ:runnable
-Οδηγίες για εκτέλεση αλγορίθμου random Surfer με χρήση γραφικού περιβάλλοντος.
-©Νάστος Βασίλειος Άρτα 2020 
