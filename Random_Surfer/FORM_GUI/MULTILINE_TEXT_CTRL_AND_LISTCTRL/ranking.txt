@@ -1,0 +1,9 @@
+whatsApp,850M
+TikTok,721M
+Messenger,711M
+Facebook,690M
+Instagram,450M
+Likee,330M
+SHAREit,325M
+Youtube,280M
+SnapChat,270M
