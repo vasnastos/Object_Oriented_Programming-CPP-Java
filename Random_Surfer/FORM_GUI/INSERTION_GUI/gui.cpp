@@ -12,7 +12,7 @@ class window:public wxFrame
 {
     private:
        wxBoxSizer *bx;
-       wxTextCtrl *visitors,*pages;
+       wxTextCtrl *visitors,*pages,*results;
        void panel1()
        {
            wxPanel *panel=new wxPanel(this,wxID_ANY);
@@ -20,7 +20,7 @@ class window:public wxFrame
            wxStaticText *st=new wxStaticText(panel,wxID_ANY,"VISITORS",wxDefaultPosition,wxSize(100,20));
            st->SetForegroundColour(wxColor("#54394a"));
            st->SetBackgroundColour(wxColor("#abe6a5"));
-           this->visitors=new wxTextCtrl(panel,wxID_ANY,"",wxDefaultPosition,wxSize(100,20));
+           this->visitors=new wxTextCtrl(panel,wxID_ANY,"3",wxDefaultPosition,wxSize(100,20));
            siz->Add(st);
            siz->Add(this->visitors);
            panel->SetSizer(siz);
@@ -33,7 +33,7 @@ class window:public wxFrame
            wxStaticText *st=new wxStaticText(panel,wxTEXT_ALIGNMENT_CENTER,"PAGES",wxDefaultPosition,wxSize(100,20));
            st->SetForegroundColour(wxColor("#54394a"));
            st->SetBackgroundColour(wxColor("#abe6a5"));
-           this->pages=new wxTextCtrl(panel,wxID_ANY,"",wxDefaultPosition,wxSize(100,20));
+           this->pages=new wxTextCtrl(panel,wxID_ANY,"10",wxDefaultPosition,wxSize(100,20));
            siz->Add(st);
            siz->Add(this->pages);
            panel->SetSizer(siz);
@@ -52,10 +52,15 @@ class window:public wxFrame
            panel->SetSizer(siz);
            this->bx->Add(panel);
        }
+       void resultspanel()
+       {
+           this->results=new wxTextCtrl(this,wxID_ANY,"",wxDefaultPosition,wxSize(330,280),wxTE_MULTILINE);
+           this->bx->Add(this->results);
+       }
     public:
        window():wxFrame(NULL,wxID_ANY,"Random Surfer")
        {
-           this->SetSize(300,300);
+           this->SetSize(350,600);
            this->bx=new wxBoxSizer(wxVERTICAL);
            wxStaticText *st=new wxStaticText(this,wxALIGN_CENTRE_HORIZONTAL,"RANDOM SURFER ALGORITHM");
            st->SetForegroundColour(wxColor("#0d0e0f"));
@@ -64,7 +69,12 @@ class window:public wxFrame
            this->panel1();
            this->panel2();
            this->buttonpanel();
+           this->resultspanel();
            this->SetSizer(this->bx);
+       }
+       ~window()
+       {
+           exit(EXIT_SUCCESS);
        }
        void surf(wxCommandEvent &ev)
        {
@@ -85,7 +95,7 @@ class window:public wxFrame
               return;
           }
           Surfer s(page);
-          s.Random_Surfing(visitor);
+          this->results->SetValue(s.Random_Surfing(visitor));
        }
        void clear(wxCommandEvent &ev)
        {

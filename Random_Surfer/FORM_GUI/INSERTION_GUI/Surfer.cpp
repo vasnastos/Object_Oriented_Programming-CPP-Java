@@ -2,9 +2,7 @@
 #include <string>
 #include <fstream>
 #define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
-double TERMINATE = 0.05;
-
-double Surfer::lastdifference=0.0;
+#define TERMINATE 0.15
 
 
 bool Surfer::difference()
@@ -23,21 +21,20 @@ bool Surfer::difference()
     {
         this->rank.push(x);
     }
-    Surfer::lastdifference=it.at(0).rank - it.at(it.size() - 1).rank;
-    return Surfer::lastdifference <= TERMINATE && this->all_visited();
+    double lval=it.at(0).rank - it.at(it.size() - 1).rank;
+    std::cout<<lval<<std::endl;
+    return lval <= TERMINATE /*&& this->all_visited()*/;
 }
 
 Surfer::Surfer(int a) : matrix(a) {}
 
 Surfer::~Surfer() {}
 
-//Surfer::info-->Κατασκευή στατικής μεταβλητής για ανάπτυξη στατικού html κώδικα.
-
-void Surfer::Random_Surfing(int visitors)
+std::string Surfer::Random_Surfing(int visitors)
 {
+    std::string result="";
     std::mt19937 eng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     std::uniform_real_distribution<double> ran(0, 1);
-    srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     //Θα υπολογιστούν τα αποτελέσματα του αλγόριθμου random Surfing
     int *startingpoints = new int[visitors]; //ο πίνακας θα έχει όσες θέσεις όσες είναι και οι visitors.
     std::uniform_int_distribution<int> v(0, this->rows - 1);
@@ -87,24 +84,21 @@ void Surfer::Random_Surfing(int visitors)
                         nextpage = v(eng);
                     }
                 }
-                nextpage = n.at(rand() % n.size());
+                nextpage = n.at(v(eng) % n.size());
             }
             this->add_visits(nextpage);
             //Για κάθε επισκέπτη βρίσκει την επόμενη σελίδα που θα μεταβεί
             //και την θέτει σαν επόμενη αρχική σελίδα για περιηγηθεί ο αλγόριθμος.
             std::cout << "Visitor " << j + 1 << " goes from Web Page " << startingpoints[j] << " to Web Page " << nextpage << std::endl;
+            result+="Visitor "+std::to_string(j+1)+" goes from Web Page "+std::to_string(startingpoints[j])+" to Web Page "+std::to_string(nextpage)+"\n"; 
             startingpoints[j] = nextpage;
-        }
-        if (countreplays % 10 == 0)
-        {
-            TERMINATE =Surfer::lastdifference;
         }
         this->find_rank();
         std::cout << std::endl;
-        //Καθυστέρηση
-        //std::this_thread::sleep_for(std::chrono::seconds(2));
+        result+="\n";
     }
     delete[] startingpoints;
     std::cout<<std::endl<<"\t\tPAGE RANKING"<<std::endl;
     this->print_ranking();
+    return result;
 }

@@ -4,13 +4,13 @@
 
 //Γεννήτρια παραγωγής τυχαίων αριθμών
 std::mt19937 mt(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-
+/*
 bool matrix::all_visited()
 {
     //Ελέγχει αν όλες οι κορυφές έχουν προσπελαστεί μία φορά
     return std::count_if(this->visits,this->visits+this->rows,[](int a) {return a!=0;})==this->rows;
 }
-
+*/
 matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols)
 {
     //Γέμισμα πίνακα με τυχαίες τιμές
@@ -109,11 +109,12 @@ void matrix::print_ranking()
     //πραγματοποιήται ταξινόμιση των στοιχείων.
     //Ουρά-->FIFO-->First in First out
     std::cout<<std::endl<<"------------------------------------------------------"<<std::endl;
-    std::cout<<"\tVERTEX\tRANK"<<std::endl;
+    std::cout<<"\tRANK\tVERTEX\tGRADE"<<std::endl;
     std::cout.precision(4);
+    int i=1;
     while(!this->rank.empty())
     {
-        std::cout<<"\t   "<<this->rank.top().vertex<<"\t"<<this->rank.top().rank<<std::endl;
+        std::cout<<"\t  "<<i++<<"\t   "<<this->rank.top().vertex<<"\t"<<this->rank.top().rank<<std::endl;
         this->rank.pop();
     }
 }

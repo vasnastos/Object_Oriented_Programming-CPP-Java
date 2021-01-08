@@ -13,7 +13,7 @@ class matrix
        int **p;
        int *visits;
        std::priority_queue <pagerank> rank;
-       bool all_visited();
+      // bool all_visited();
     public:
       matrix(int number_of_rows_cols);
       ~matrix();
