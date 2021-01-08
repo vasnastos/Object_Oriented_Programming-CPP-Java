@@ -2,13 +2,8 @@
 #include <numeric>
 #include <cmath>
 
-/*
-bool matrix::all_visited()
-{
-    //Ελέγχει αν όλες οι κορυφές έχουν προσπελαστεί μία φορά
-    return std::count_if(this->visits,this->visits+this->rows,[](int a) {return a!=0;})==this->rows;
-}
-*/
+std::vector <pagerank> matrix::ranking;
+
 matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols)
 {
     //Γέμισμα πίνακα με τυχαίες τιμές
@@ -103,13 +98,14 @@ void matrix::find_rank()
     }
 }
 
-void matrix::print_ranking()
+void  matrix::print_ranking()
 {
     //Το ranking για την κάθε σελίδα θα αποτελεί μία μεταβλητή τύπου pagerank
     //Η μεταβλητές αυτές αποθηκεύονται σε μία ουρα προτεραιότητας
     //Η ουρα προτεραιότητας έχει το χαρακτηριστικό ότι κάτα την διάρκεια κάθε εισόδου
     //πραγματοποιήται ταξινόμιση των στοιχείων.
     //Ουρά-->FIFO-->First in First out
+    matrix::ranking.clear();
     std::cout << std::endl
               << "------------------------------------------------------" << std::endl;
     std::cout << "\tRANK\tVERTEX\tGRADE" << std::endl;
@@ -117,6 +113,7 @@ void matrix::print_ranking()
     int i = 1;
     while (!this->rank.empty())
     {
+        matrix::ranking.push_back(this->rank.top());
         std::cout << "\t  " << i++ << "\t   " << this->rank.top().vertex << "\t" << this->rank.top().rank << std::endl;
         this->rank.pop();
     }

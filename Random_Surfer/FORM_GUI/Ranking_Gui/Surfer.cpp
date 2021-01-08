@@ -23,13 +23,13 @@ bool Surfer::difference()
     {
         this->rank.push(x);
     }
+    //Συνθήκη που αλλάζει την τιμή τερματισμού
     if(countcalls%20==0)
     {
         TERMINATE*=2;
     }
     double lval=it.at(0).rank - it.at(it.size() - 1).rank;
-    std::cout<<lval<<std::endl;
-    return lval <= TERMINATE /*&& this->all_visited()*/;
+    return lval <= TERMINATE;
 }
 
 Surfer::Surfer(int a) : matrix(a) {}

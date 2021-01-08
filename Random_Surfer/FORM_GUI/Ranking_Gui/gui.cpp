@@ -1,8 +1,11 @@
 #include <wx/wx.h>
+#include <wx/ListCtrl.h>
 #include "Surfer.hpp"
 #include <fstream>
 #include <string>
+#define RAN 90
 #define SAVE 112
+#define RNK 111
 #define EXIT 113
 
 
@@ -20,13 +23,36 @@ class window:public wxFrame
        std::string res;
        wxBoxSizer *bx;
        wxTextCtrl *visitors,*pages,*results;
+       wxListCtrl *ranking;
+       void Clearlist()
+       {
+           this->ranking->ClearAll();
+           wxListItem col1;
+           col1.SetWidth(110);
+           col1.SetId(0);
+           col1.SetText(_("RANK"));
+           wxListItem col2;
+           col2.SetWidth(110);
+           col2.SetId(1);
+           col2.SetText(_("WEB PAGE"));
+           wxListItem col3;
+           col3.SetId(2);
+           col3.SetWidth(110);
+           col3.SetText(_("GRADE"));
+           this->ranking->InsertColumn(0,col1);
+           this->ranking->InsertColumn(1,col2);
+           this->ranking->InsertColumn(2,col3);
+       }
        void make_menu()
        {
+           //Δημιουργία μενού και σύνδεση με ενέργεια.
            wxMenuBar *bar=new wxMenuBar();
            wxMenu *m=new wxMenu();
            m->Append(SAVE,"SAVE SURF");
+           m->Append(RNK,"SAVE RANK");
            m->Append(EXIT,"EXIT");
            Connect(SAVE,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::Save));
+           Connect(RNK,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::SaveTable));
            Connect(EXIT,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::Exit));
            bar->Append(m,"OPTIONS");
            this->SetMenuBar(bar);
@@ -70,6 +96,38 @@ class window:public wxFrame
            panel->SetSizer(siz);
            this->bx->Add(panel);
        }
+       void ranking_panel()
+       {
+           this->ranking=new wxListCtrl(this,wxID_ANY,wxDefaultPosition,wxSize(330,250),wxLC_REPORT);
+           wxListItem col1;
+           col1.SetWidth(110);
+           col1.SetId(0);
+           col1.SetText(_("RANK"));
+           wxListItem col2;
+           col2.SetWidth(110);
+           col2.SetId(1);
+           col2.SetText(_("WEB PAGE"));
+           wxListItem col3;
+           col3.SetId(2);
+           col3.SetWidth(110);
+           col3.SetText(_("GRADE"));
+           this->ranking->InsertColumn(0,col1);
+           this->ranking->InsertColumn(1,col2);
+           this->ranking->InsertColumn(2,col3);
+           
+           //Εισαγωγή αντικειμένου στην λίστα
+           wxListItem it;
+           it.SetId(RAN);
+           it.SetText("Here we are inserted the ranking results of Random Surfing");
+           this->ranking->InsertItem(it);
+
+           //Τροποποίηση με βάση τις στήλες
+           this->ranking->SetItem(0,0,"Rank Column");
+           this->ranking->SetItem(0,1,"Vertex Column");
+           this->ranking->SetItem(0,2,"Grade Column");
+
+           this->bx->Add(this->ranking);
+       }
        void resultspanel()
        {
            this->results=new wxTextCtrl(this,wxID_ANY,"",wxDefaultPosition,wxSize(330,280),wxTE_MULTILINE);
@@ -89,6 +147,7 @@ class window:public wxFrame
            this->panel2();
            this->buttonpanel();
            this->resultspanel();
+           this->ranking_panel();
            this->SetSizer(this->bx);
        }
        ~window()
@@ -141,6 +200,28 @@ class window:public wxFrame
           os<<"---------------------------------------------------------------"<<std::endl;
           os<<this->res<<std::endl;
           os.close();
+       }
+       void SaveTable(wxCommandEvent &ev)
+       {
+           if(matrix::ranking.empty()) return;
+          std::string time=__TIME__;
+          std::string date=__DATE__;
+          std::ofstream os;
+          os.open("Ranking_"+date+".out");
+          os<<"File Saving Ranking from of the Web Pages"<<std::endl;
+          os<<"File Created at:"<<date<<"-"<<time<<std::endl;
+          os<<"Pages:"<<this->pgs<<std::endl;
+          os<<"Iterations:"<<Surfer::countcalls<<std::endl;
+          os<<"--------------------------------------------------------------------------"<<std::endl;
+          os<<"\tRANK\tPAGE\tGRADE"<<std::endl;
+          int counter=1;
+          for(auto &x:matrix::ranking)
+          {
+              os<<"\t "<<counter<<"   \t  "<<x.vertex<<"   \t "<<x.rank<<std::endl;
+              counter++;
+          }
+          os.close();
+          wxMessageBox("Ranking info have been saved in Ranking_"+date+"-"+time+".out file");
        }
        void Exit(wxCommandEvent &ev)
        {

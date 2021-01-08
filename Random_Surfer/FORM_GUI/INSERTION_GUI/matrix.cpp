@@ -2,13 +2,7 @@
 #include <numeric>
 #include <cmath>
 
-/*
-bool matrix::all_visited()
-{
-    //Ελέγχει αν όλες οι κορυφές έχουν προσπελαστεί μία φορά
-    return std::count_if(this->visits,this->visits+this->rows,[](int a) {return a!=0;})==this->rows;
-}
-*/
+
 matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols)
 {
     //Γέμισμα πίνακα με τυχαίες τιμές
