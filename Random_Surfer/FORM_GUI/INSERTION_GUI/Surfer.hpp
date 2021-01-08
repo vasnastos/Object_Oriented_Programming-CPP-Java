@@ -3,6 +3,7 @@
 
 class Surfer:public matrix{
     private:
+       static int countcalls; 
        bool difference();
     public:  
       Surfer(int a);
