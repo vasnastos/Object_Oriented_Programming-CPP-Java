@@ -22,7 +22,7 @@ class window:public wxFrame
        int pgs;
        std::string res;
        wxBoxSizer *bx;
-       wxTextCtrl *visitors,*pages,*results;
+       wxTextCtrl *visitors,*pages,*dp,*results;
        wxListCtrl *ranking;
        void Clearlist()
        {
@@ -68,6 +68,19 @@ class window:public wxFrame
            siz->Add(st);
            siz->Add(this->visitors);
            panel->SetSizer(siz);
+           this->bx->Add(panel);
+       }
+       void Damping_panel()
+       {
+           wxPanel *panel=new wxPanel(this,wxID_ANY);
+           wxGridSizer *gs=new wxGridSizer(0,2,5,5);
+           wxStaticText *st=new wxStaticText(panel,wxID_ANY,"Damping Factor",wxDefaultPosition,wxSize(100,20));
+           st->SetForegroundColour(wxColor("#54394a"));
+           st->SetBackgroundColour(wxColor("#abe6a5"));
+           this->dp=new wxTextCtrl(panel,wxID_ANY,"0.85",wxDefaultPosition,wxSize(100,20));
+           gs->Add(st);
+           gs->Add(this->dp);
+           panel->SetSizer(gs);
            this->bx->Add(panel);
        }
        void panel2()
@@ -144,6 +157,7 @@ class window:public wxFrame
            this->bx->Add(st);
            this->make_menu();
            this->panel1();
+           this->Damping_panel();
            this->panel2();
            this->buttonpanel();
            this->resultspanel();
@@ -160,28 +174,33 @@ class window:public wxFrame
            //Εκχωρώ την τιμή από το πεδίο εισόδου σε ένα αλφαριθμητικό.
           std::string vis=std::string(this->visitors->GetValue());
           std::string pgs=std::string(this->pages->GetValue());
-          if(vis.empty() || pgs.empty())
+          std::string dampingfactor=std::string(this->dp->GetValue());
+          if(vis.empty() || pgs.empty() || dampingfactor.empty())
           {
               wxMessageBox("Fill all the blanks");
               return;
           }
           int visitor=std::stoi(vis);
           int page=std::stoi(pgs);
+          double dampfactor=std::stod(dampingfactor);
           this->vs=visitor;
           this->pgs=page;
-          if(visitor==0  || page==0)
+          if(visitor==0  || page==0 || dampfactor<0.0)
           {
               wxMessageBox("0 number detected!!Surfer algorithm not executed");
               return;
           }
           Surfer s(page);
-          this->res=s.Random_Surfing(visitor);
+          this->res=s.Random_Surfing(visitor,dampfactor);
           this->results->SetValue(res);
        }
        void clear(wxCommandEvent &ev)
        {
           this->visitors->SetValue("");
           this->pages->SetValue("");
+          this->dp->SetValue("");
+          this->results->SetValue("");
+          this->Clearlist();
        }
        void Save(wxCommandEvent &ev)
        {

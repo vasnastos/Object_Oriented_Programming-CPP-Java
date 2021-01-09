@@ -7,5 +7,5 @@ class Surfer:public matrix{
       static int countcalls; 
       Surfer(int a);
       ~Surfer();
-      std::string Random_Surfing(int visitors);
+      std::string Random_Surfing(int visitors,double DAMPING_FACTOR);
 };

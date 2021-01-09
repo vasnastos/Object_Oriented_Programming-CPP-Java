@@ -1,7 +1,7 @@
 #include "Surfer.hpp"
 #include <string>
 #include <fstream>
-#define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
+//#define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
 double TERMINATE=0.05;//Παράγοντας Τερματισμού
 
 int Surfer::countcalls=0;
@@ -36,7 +36,7 @@ Surfer::Surfer(int a) : matrix(a) {}
 
 Surfer::~Surfer() {}
 
-std::string Surfer::Random_Surfing(int visitors)
+std::string Surfer::Random_Surfing(int visitors,double DAMPING_FACTOR)
 {
     Surfer::countcalls=0;
     TERMINATE=0.05;
