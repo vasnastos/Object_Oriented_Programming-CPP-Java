@@ -1,11 +1,13 @@
 #include <wx/wx.h>
 #include <wx/ListCtrl.h>
+#include "cluster.hpp"
 #include "Surfer.hpp"
 #include <fstream>
 #include <string>
 #define RAN 90
 #define SAVE 112
 #define RNK 111
+#define EXCELL 190
 #define EXIT 113
 
 
@@ -50,9 +52,11 @@ class window:public wxFrame
            wxMenu *m=new wxMenu();
            m->Append(SAVE,"SAVE SURF");
            m->Append(RNK,"SAVE RANK");
+           m->Append(EXCELL,"RUN ITERATE EVENT");
            m->Append(EXIT,"EXIT");
            Connect(SAVE,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::Save));
            Connect(RNK,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::SaveTable));
+           Connect(EXCELL,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::implementIterations));
            Connect(EXIT,wxEVT_COMMAND_MENU_SELECTED,wxCommandEventHandler(window::Exit));
            bar->Append(m,"OPTIONS");
            this->SetMenuBar(bar);
@@ -261,6 +265,26 @@ class window:public wxFrame
                this->rnk->SetItem(i,1,std::to_string(matrix::ranking.at(i).vertex));
                this->rnk->SetItem(i,2,std::to_string(matrix::ranking.at(i).rank));
            }
+       }
+       void implementIterations(wxCommandEvent &ev)
+       {
+          std::string fn="results.csv";
+          std::ofstream out;
+          out.open(fn);
+          out<<"Visitors=3,Pages=10"<<std::endl<<std::endl;
+          out<<"N,D,Popular Page Rank"<<std::endl;
+          for(int N=10;N<=1000;N++)
+          {
+              for(double D=0.5;D<1.0;D+=0.1)
+              {
+                  Surfer s(N);
+                  s.Random_Surfing(3,D);
+                  s.print_ranking();
+                  out<<N<<","<<D<<","<<matrix::ranking[0].rank<<std::endl;
+              }
+          }
+          out.close();
+          cluster::Cluster(fn);
        }
 };
 
