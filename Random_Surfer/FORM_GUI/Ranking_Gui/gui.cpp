@@ -61,11 +61,11 @@ class window:public wxFrame
        {
            wxPanel *panel=new wxPanel(this,wxID_ANY);
            wxGridSizer *siz=new wxGridSizer(0,2,5,5);
-           wxStaticText *st=new wxStaticText(panel,wxID_ANY,"VISITORS",wxDefaultPosition,wxSize(100,20));
+           wxStaticText *st=new wxStaticText(panel,wxTEXT_ALINGMENT_CENTER,"VISITORS",wxDefaultPosition);
            st->SetForegroundColour(wxColor("#54394a"));
            st->SetBackgroundColour(wxColor("#abe6a5"));
            this->visitors=new wxTextCtrl(panel,wxID_ANY,"3",wxDefaultPosition,wxSize(100,20));
-           siz->Add(st);
+           siz->Add(st,wxALIGN_CENTER_HORIZONTAL);
            siz->Add(this->visitors);
            panel->SetSizer(siz);
            this->bx->Add(panel);
@@ -163,6 +163,7 @@ class window:public wxFrame
            this->resultspanel();
            this->ranking_panel();
            this->SetSizer(this->bx);
+           Center();
        }
        ~window()
        {

@@ -1,8 +1,9 @@
 #include "Surfer.hpp"
+#include <cmath>
 #include <string>
 #include <fstream>
 #define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
-#define TERMINATE 0.1
+#define TERMINATE  0,00001
 
 std::mt19937 eng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 std::uniform_real_distribution<double> ran(0, 1);
@@ -20,9 +21,8 @@ bool Surfer::difference()
     {
         this->rank.push(x);
     }
-    return (it.at(0).rank-it.at(it.size()-1).rank)<=TERMINATE && this->all_visited();
+    return  this->rank.top().rank-this->previous_top_ranking<=TERMINATE;
 }
-
 Surfer::Surfer(int a) : matrix(a) {}
 
 Surfer::~Surfer() {}

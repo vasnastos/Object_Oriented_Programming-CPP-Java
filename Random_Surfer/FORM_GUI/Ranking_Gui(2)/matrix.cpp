@@ -85,6 +85,10 @@ int *matrix::get(int r)
 void matrix::find_rank()
 {
     //Εύρεση βαθμών κορυφής.
+    if(!this->rank.empty())
+    {
+        this->previous_top_rank=this->rank.top().rank;
+    }
     while (!this->rank.empty())
     {
         this->rank.pop();

@@ -5,12 +5,7 @@
 //Γεννήτρια παραγωγής τυχαίων αριθμών
 std::mt19937 mt(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
-bool matrix::all_visited()
-{
-    return std::count_if(this->visits,this->visits+this->rows,[](int a) {return a!=0;})==this->rows;
-}
-
-matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols)
+matrix::matrix(int number_of_rows_cols) : rows(number_of_rows_cols), cols(number_of_rows_cols),previous_top_ranking(0)
 {
     //Γέμισμα πίνακα με τυχαίες τιμές
     std::uniform_int_distribution<int> values(0, 1);
@@ -87,6 +82,7 @@ int* matrix::get(int r)
 void matrix::find_rank()
 {
     //Εύρεση βαθμών κορυφής.
+    this->previous_top_ranking=this->rank.top().rank;
     while(!this->rank.empty())
     {
         this->rank.pop();

@@ -15,7 +15,7 @@ class window:public wxFrame
        wxTextCtrl *visitors,*pages,*results;
        void panel1()
        {
-           wxPanel *panel=new wxPanel(this,wxID_ANY);
+           wxPanel *panel=new wxPanel(this,wxALIGN_CENTER_HORIZONTAL);
            wxGridSizer *siz=new wxGridSizer(0,2,5,5);
            wxStaticText *st=new wxStaticText(panel,wxID_ANY,"VISITORS",wxDefaultPosition,wxSize(100,20));
            st->SetForegroundColour(wxColor("#54394a"));
@@ -62,7 +62,7 @@ class window:public wxFrame
        {
            this->SetSize(350,600);
            this->bx=new wxBoxSizer(wxVERTICAL);
-           wxStaticText *st=new wxStaticText(this,wxALIGN_CENTRE_HORIZONTAL,"RANDOM SURFER ALGORITHM");
+           wxStaticText *st=new wxStaticText(this,wxALIGN_CENTER_HORIZONTAL,"RANDOM SURFER ALGORITHM");
            st->SetForegroundColour(wxColor("#0d0e0f"));
            st->SetBackgroundColour(wxColor("#e0e319"));
            this->bx->Add(st);
@@ -70,6 +70,7 @@ class window:public wxFrame
            this->panel2();
            this->buttonpanel();
            this->resultspanel();
+            this->Centre();
            this->SetSizer(this->bx);
        }
        ~window()

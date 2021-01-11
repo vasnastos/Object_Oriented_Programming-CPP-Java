@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 //#define DAMPING_FACTOR 0.85 //Παράγοντας που θα καθορίζει το πως θα επιλέγεται η επόμενη σελίδα
-double TERMINATE=0.05;//Παράγοντας Τερματισμού
+#define TERMINATE 0.00001//Παράγοντας Τερματισμού
 
 int Surfer::countcalls=0;
 
@@ -13,23 +13,7 @@ bool Surfer::difference()
     {
         return false;
     }
-    std::vector<pagerank> it;
-    while (!this->rank.empty())
-    {
-        it.push_back(this->rank.top());
-        this->rank.pop();
-    }
-    for (auto &x : it)
-    {
-        this->rank.push(x);
-    }
-    //Συνθήκη που αλλάζει την τιμή τερματισμού
-    if(countcalls%20==0)
-    {
-        TERMINATE*=2;
-    }
-    double lval=it.at(0).rank - it.at(it.size() - 1).rank;
-    return lval <= TERMINATE;
+    return std::abs(this->rank.top().rank-this->previous_top_rank)<=TERMINATE;
 }
 
 Surfer::Surfer(int a) : matrix(a) {}
@@ -39,7 +23,6 @@ Surfer::~Surfer() {}
 std::string Surfer::Random_Surfing(int visitors,double DAMPING_FACTOR)
 {
     Surfer::countcalls=0;
-    TERMINATE=0.05;
     std::string result="";
     std::mt19937 eng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     std::uniform_real_distribution<double> ran(0, 1);

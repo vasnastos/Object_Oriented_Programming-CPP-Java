@@ -13,6 +13,7 @@ class matrix
        int **p;
        int *visits;
        std::priority_queue <pagerank> rank;
+       double previous_top_rank;
     public:
      static std::vector <pagerank> ranking;
       matrix(int number_of_rows_cols);
