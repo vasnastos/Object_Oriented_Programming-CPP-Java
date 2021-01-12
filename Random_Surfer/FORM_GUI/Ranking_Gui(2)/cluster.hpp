@@ -92,9 +92,10 @@ public:
         }
         fs.close();
         std::ofstream out;
+        out.precision(4);
         for (std::map<double, std::vector<info>>::iterator itr = seper_map.begin(); itr != seper_map.end(); itr++)
         {
-            std::string fn=getName(0) + std::to_string(itr->first) + ".csv";
+            std::string fn="CSV_VS_3/"+getName(0) + std::to_string(itr->first) + ".csv";
             out.open(fn);
             out<<getName(0)<<std::endl;
             for (auto &x : itr->second)
@@ -102,7 +103,7 @@ public:
                 out << x.number_of_pages << std::endl;
             }
             out.close();
-            getName(1) + std::to_string(itr->first) + ".csv";
+            fn="CSV_VS_3/"+getName(1) + std::to_string(itr->first) + ".csv";
             out.open(fn);
             out<<getName(1)<<std::endl;
             for(auto &x:itr->second)
@@ -110,7 +111,7 @@ public:
                 out<<x.Damping_factor<<std::endl;
             }
             out.close();
-            fn=getName(2) + std::to_string(itr->first) + ".csv";
+            fn="CSV_VS_3/"+getName(2) + std::to_string(itr->first) + ".csv";
             out.open(fn);
             out<<getName(2)<<std::endl;
             for(auto &x:itr->second)

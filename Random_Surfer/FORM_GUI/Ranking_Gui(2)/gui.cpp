@@ -273,15 +273,15 @@ class window:public wxFrame
           out.open(fn);
           out<<"Visitors=3,Pages=10"<<std::endl<<std::endl;
           out<<"N,D,Popular Page Rank"<<std::endl;
-          for(int N=10;N<=1000;N++)
-          {
-              for(double D=0.5;D<1.0;D+=0.1)
-              {
+          for(double D=0.5;D<1.0;D+=0.1)
+          {  
+            for(int N=10;N<=1000;N++)
+            {
                   Surfer s(N);
                   s.Random_Surfing(3,D);
                   s.print_ranking();
                   out<<N<<","<<D<<","<<matrix::ranking[0].rank<<std::endl;
-              }
+            }
           }
           out.close();
           cluster::Cluster(fn);
