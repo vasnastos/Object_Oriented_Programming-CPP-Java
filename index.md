@@ -2,6 +2,8 @@
 <html>
 <body>
 <center>
+ <h2>Περιεχόμενα Μαθήματος</h2>
+<br>
 <h2>ΕΓΚΑΤΑΣΤΑΣΗ ΛΟΓΙΣΜΙΚΩΝ</h2>
  <ul>
 <li><h3><a href="javainstallation.html">Οδηγίες Εγκατάστασης JDK και ECLIPSE IDE</a></h3></li>
