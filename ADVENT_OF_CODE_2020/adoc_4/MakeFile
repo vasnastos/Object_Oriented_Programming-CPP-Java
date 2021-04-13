@@ -1,8 +1,0 @@
-all:
-   $(CC)  main.o passport.o readfile.o -o advent4.exe
-main.o:main.cpp
-   $(CC) -c advent_of_code_4.cpp
-passport.o:passport.cpp passport.hpp
-   $(cc) -c passport.cpp
-readfile.o:readfile.cpp readfile.hpp
-   $(CC) -c readfile.cpp
