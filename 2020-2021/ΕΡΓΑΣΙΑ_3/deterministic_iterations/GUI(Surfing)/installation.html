@@ -1,0 +1,25 @@
+<html>
+<body>
+<center>
+    <h1>Οδηγίες εκτέλεσης του προγράμματος</h1>
+    <hr style="border-top: 2px solid red;">
+</center>
+    <b style="font-size: 25px;">1.Στο φάκελο που είναι αποθηκευμένα τα αρχεία 
+        του πηγαίου κώδικα αποθηκεύστε τα ακόλουθα dll</b><br>
+         <strong style="font-size:18px;">1.* wxbase314u_gcc_custom.dll<br>
+                 2.* wxmsw314u_core_gcc_custom.dll<br>
+        </strong>
+        <br>
+    <b style="font-size:25px;">2.Μεταγλώττιση κώδικα:<br>
+       <img src="https://iconarchive.com/download/i45768/tatice/operating-systems/Windows.ico" width="20px;" height="20px;"/><strong>:: g++ Surfer.cpp Matrix.cpp gui.cpp -IC:\\wxWidgets-3.1.4\\include -IC:\\wxWidgets-3.1.4\\lib\\gcc_dll\\mswu 
+        -LC:\\wxWidgets-3.1.4\\lib\\gcc_dll -lwxmsw31u_core -lwxbase31u -o runnable
+    <br>  <img src="https://cdn.iconscout.com/icon/free/png-512/linux-17-570099.png" width="30px;" height="30px;"/><strong>:: g++ Surfer.cpp Matrix.cpp gui.cpp  `wx-config --cxxflags --libs` -o runnable</strong>
+    <br><br><b style="font-size:25 px;">3.Εκτέλεση:</b>
+    <br>
+    <img src="https://iconarchive.com/download/i45768/tatice/operating-systems/Windows.ico" width="20px" height="20px"/><strong>:: runnable</strong><br>
+    <img src="https://cdn.iconscout.com/icon/free/png-512/linux-17-570099.png" width="30px" height="30px"/><strong>:: ./runnable</strong>
+    <br><br>
+    <b style="font-size:25px;">4.Αποτέλεσμα</b><br>
+         <img src="https://github.com/vasnastos/Page_Images/blob/master/WXWIDGETS/Surfing_Gui.png?raw=true"/>
+</body>
+</html>
